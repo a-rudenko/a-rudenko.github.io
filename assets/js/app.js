@@ -96,3 +96,46 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
+
+(function () {
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let elements = document.querySelectorAll(".element");
+        elements.forEach(function (el) {
+            new Typed(el, {
+                strings: ["a Web Developer.", "Alexey Rudenko"],
+                typeSpeed: 30,
+                startDelay: 500,
+                backDelay: 250,
+                callback: function () {
+                    lift(el);
+                }
+            });
+        });
+
+        function lift(element) {
+            element.classList.add("heading");
+            fadeInOut(element, [150, 50, 100, 50, 100, 50, 500], function () {
+                let hiddenElements = document.querySelectorAll('.hidden');
+                hiddenElements.forEach(function (hidden) {
+                    setTimeout(function () {
+                        hidden.classList.add('visible');
+                    }, 100);
+                });
+            });
+        }
+
+        function fadeInOut(element, durations, callback) {
+            if (!durations.length) {
+                if (callback) callback();
+                return;
+            }
+            let duration = durations.shift();
+            element.style.opacity = element.style.opacity === "1" ? "0" : "1";
+            setTimeout(function () {
+                fadeInOut(element, durations, callback);
+            }, duration);
+        }
+    });
+})();

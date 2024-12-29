@@ -55,13 +55,27 @@ html body {
 
 .heading-2 {
     color: #d96459;
+    text-shadow: 0 0 .313em #d96459, 0 0 .625em #d96459
+}
+
+.hidden {
+    opacity: 0
+}
+
+.visible {
     opacity: 1 !important;
     -webkit-transition: all .7s ease-in-out;
     -moz-transition: all .7s ease-in-out;
     -o-transition: all .7s ease-in-out;
     -ms-transition: all .7s ease-in-out;
-    transition: all .7s ease-in-out;
-    text-shadow: 0 0 .313em #d96459, 0 0 .625em #d96459
+    transition: all .7s ease-in-out
+}
+
+.cursor {
+    opacity: 1;
+    -webkit-animation: blink .7s infinite;
+    -moz-animation: blink .7s infinite;
+    animation: blink .7s infinite
 }
 
 #particles-js {
