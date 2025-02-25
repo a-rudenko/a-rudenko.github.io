@@ -104,7 +104,7 @@ particlesJS("particles-js", {
         let elements = document.querySelectorAll(".element");
         elements.forEach(function (el) {
             new Typed(el, {
-                strings: ["a Web Developer.", "Alexey Rudenko"],
+                strings: ["a Web Developer.", "Aleksey Rudenko"],
                 typeSpeed: 30,
                 startDelay: 500,
                 backDelay: 250,
